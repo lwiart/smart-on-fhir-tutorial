@@ -1,18 +1,3 @@
-<!-- for this to work, you need to create an app at https://code.cerner.com/developer/smart-on-fhir/apps 
-1- create an account at https://code.cerner.com/developer/smart-on-fhir/apps
-2- create an app with the following params:
-  SMART launch URI: https://lwiart.github.io/smart-on-fhir-tutorial/example-smart-app/launchCerner.html
-  Redirect URI: https://lwiart.github.io/smart-on-fhir-tutorial/example-smart-app/
-  App Type: provider
-  Authorized: true (use OAuth2)
-  FHIR spec: DSTU2
-  Scopes: patient/DocumentReference.read, patient/Observation.read, patient/Patient.read, patient/DocumentReference.write, patient/Patient.write
-3- paste the client_id from your newly created app below (search for client_id in FHIR.oauth2.authorize)
-4- in your Cerner Code account, click on "Begin Testing" and select a patient
-5- the authentication will be done and you will be redirected to an HTML page that will display the patient info
-The first call from Cerner code will look like:
-https://lwiart.github.io/smart-on-fhir-tutorial/example-smart-app/launchCerner.html?iss=https%3A%2F%2Ffhir-ehr.sandboxcerner.com%2Fdstu2%2F0b8a0111-e8e6-4c26-a91c-5069cbc6b1ca&launch=84ca5e81-1efa-4202-88e5-dcc7934c7c35
--->
 <!DOCTYPE html>
 <html lang="en">
   <head>
