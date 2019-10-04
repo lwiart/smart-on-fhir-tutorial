@@ -1,0 +1,52 @@
+<!-- for this to work, you need to create an app at https://code.cerner.com/developer/smart-on-fhir/apps 
+1- create an account at https://code.cerner.com/developer/smart-on-fhir/apps
+2- create an app with the following params:
+  SMART launch URI: https://lwiart.github.io/smart-on-fhir-tutorial/example-smart-app/launchCerner.html
+  Redirect URI: https://lwiart.github.io/smart-on-fhir-tutorial/example-smart-app/
+  App Type: provider
+  Authorized: true (use OAuth2)
+  FHIR spec: DSTU2
+  Scopes: patient/DocumentReference.read, patient/Observation.read, patient/Patient.read, patient/DocumentReference.write, patient/Patient.write
+3- paste the client_id from your newly created app below (search for client_id in FHIR.oauth2.authorize)
+4- in your Cerner Code account, click on "Begin Testing" and select a patient
+5- the authentication will be done and you will be redirected to an HTML page that will display the patient info
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel='stylesheet' type='text/css' href='./src/css/example-smart-app.css'>
+    <!--
+      Temporarily disable cerner-smart-embeddable-lib
+      <link rel='stylesheet' type='text/css' href='./lib/css/cerner-smart-embeddable-lib-1.0.0.min.css'>
+    -->
+    <title>Cerner SMART on FHIR (from lwiart)</title>
+  </head>
+  <body>
+    <!-- Required JS files to enable this page to embed within an MPage -->
+    <!--
+      Temporarily disable cerner-smart-embeddable-lib
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js'></script>
+      <script src='./lib/js/cerner-smart-embeddable-lib-1.0.0.min.js'></script>
+    -->
+
+    <!-- FHIR Client JS Library -->
+    <script src='./lib/js/fhir-client-v0.1.12.js'></script>
+
+    <!-- Prevent session bleed caused by single threaded embedded browser and sessionStorage API -->
+    <!-- https://github.com/cerner/fhir-client-cerner-additions -->
+    <script src='./lib/js/fhir-client-cerner-additions-1.0.0.js'></script>
+    <script>
+      FHIR.oauth2.authorize({
+        'client_id': 'e072d47a-942d-45b9-9140-a5cdcef37c50',
+        'scope':  'patient/Patient.read patient/Observation.read launch online_access openid profile'
+      });
+    </script>
+    <div class="spinner">
+      <div class="bounce1"></div>
+      <div class="bounce2"></div>
+      <div class="bounce3"></div>
+    </div>
+  </body>
+</html>
