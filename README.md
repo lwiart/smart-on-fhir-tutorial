@@ -31,7 +31,7 @@ Sources:
     Name of your app: give it the name you want  
     Your app's launch URL: https://*your_github_id*.github.io/smart-on-fhir-tutorial/example-smart-app/launchEpicLaunchpad.html  
     Your app's OAuth2 redirect URL: https://*your_github_id*.github.io/smart-on-fhir-tutorial/example-smart-app/  
-3. paste the **client_id** from the launch pad in *smart-on-fhir-tutorial/example-smart-app/launchEpic.html* (search for client_id in FHIR.oauth2.authorize)
+3. paste the **client_id** from the launch pad in *smart-on-fhir-tutorial/example-smart-app/launchEpicLaunchpad.html* (search for client_id in FHIR.oauth2.authorize)
 4. click the **LAUNCH APP** button
 6- the authentication will be done and you will be redirected to an HTML page that will display the patient info
 The first call from EPIC code should look like:  
